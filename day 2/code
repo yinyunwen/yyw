@@ -1,1 +1,32 @@
-
+# day 2
+username = input('请输入账号:')
+password = input('请输入密码:')
+if username == 'yyer' and password == '19970806':
+    print('身份验证成功')
+else:
+    print('身份验证失败')
+'''
+'''
+x = float(input('请输入x的值:'))
+if x <= 1:
+    y = 2*x
+elif x>1 and x < 2:
+    y = 3*x
+else:
+    y=4*x
+print(y)
+'''
+'''
+#课后练习：输入三条边长，如果能构成三角形的话就计算出周长p和面积s
+a = float(input('a='))
+b = float(input('b='))
+c = float(input('c='))
+if a+b>c and a+c>b and b+c>a:
+    z=a+b+c
+    p = (a+b+c)/2
+    s = (p * (p - a) * (p - b) * (p - c)) ** 0.5
+    print('周长:%f' %(z))
+    print('面积:%f' %(s))
+else:
+    print('这三条边不能构成三角形')
+'''

@@ -1,0 +1,55 @@
+# day 4
+'''
+#寻找水仙数,这里个十百上得数比较难找
+for x in range(100,1000):
+    third = x % 10
+    second = x//10 %10
+    first = x//100
+    if third**3 + second**3 + first**3 == x:
+        print(x)
+'''
+#将1234转为4321
+'''
+a = 1234
+b = a%10
+c = a//10 % 10
+d = a//100 % 10
+e = a//1000
+new_number = b*1000+c*100+d*10+e
+print(new_number)
+'''
+'''
+num = int(input('num = '))
+reversed_num = 0
+while num > 0:
+    reversed_num = reversed_num * 10 + num % 10
+    num //= 10
+print(reversed_num)
+'''
+'''
+for x in range(21):
+    for y in range(33):
+        for z in range(300):
+            if 5*x+3*y+z/3==100 and x+y+z==100:
+                print('公鸡:%d只,母鸡:%d只,小鸡:%d只' %(x,y,z))
+'''
+'''
+#求出10000以内的所有完美数
+for x in range(10001):
+    sum=0
+    for y in range(1,x):
+        if x%y == 0:
+            sum += y
+    if sum == x:
+        print(x)
+'''
+'''
+#求100以内的所有素数
+for x in range(1,101):
+    sum = 0
+    for y in range(1,x+1):
+        if x%y == 0:
+            sum += y
+    if sum == x+1:
+        print(x)
+'''

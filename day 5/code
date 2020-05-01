@@ -1,0 +1,48 @@
+# day 5
+'''
+def add(a=0, b=0, c=0):
+    """三个数相加"""
+    return a + b + c
+print(add(1))
+print(add(1,2))
+print(add(1,2,3))
+print(add())
+'''
+'''
+#求最大公因数和最小公倍数
+def solve(x,y):
+    for m in range(min(x,y)+1,0,-1):
+        if x%m == 0 and y%m == 0:
+            return m
+a = int(input('m:'))
+b = int(input('n:'))
+print(solve(a,b))
+'''
+'''
+#验证一个数是不是素数
+def sushu(x):
+    sum = 0
+    for n in range(1,x+1):
+        if x%n == 0:
+            sum += n
+    if sum == x+1:
+        return True 
+    else:
+        return False
+a = int(input('输入x的值:'))
+print(sushu(a))
+'''
+'''
+def first():
+    b=100#函数内的局部变量
+    def bar():
+        c=True
+        print(a)
+        print(b)
+        print(c)
+    bar()
+if __name__ == '__main__':
+     
+     a=200#全局变量
+     first()
+'''

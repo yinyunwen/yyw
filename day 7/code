@@ -1,0 +1,100 @@
+#day 7
+from time import sleep
+
+
+class Clock(object):
+    """数字时钟"""
+
+    def __init__(self, hour=0, minute=0, second=0):
+        """初始化方法
+
+        :param hour: 时
+        :param minute: 分
+        :param second: 秒
+        """
+        self._hour = hour
+        self._minute = minute
+        self._second = second
+
+    def run(self):
+        """走字"""
+        self._second += 1
+        if self._second == 60:
+            self._second = 0
+            self._minute += 1
+            if self._minute == 60:
+                self._minute = 0
+                self._hour += 1
+                if self._hour == 24:
+                    self._hour = 0
+
+    def show(self):
+        """显示时间"""
+        return '%02d:%02d:%02d' % \
+               (self._hour, self._minute, self._second)
+
+
+def main():
+    clock = Clock(23, 59, 58)
+    while True:
+        print(clock.show())
+        sleep(1)
+        clock.run()
+
+
+if __name__ == '__main__':
+    main()
+'''
+'''
+#编写代码定义一个类描述平面上的点并提供移动算法和计算到另一个点距离的算法
+from math import sqrt
+
+class point(object):
+    def __init__(self,x=0,y=0):
+        #初始化xy的值
+        self.x=x
+        self.y=y
+    def move(self,dx,dy):
+        self.x += dx
+        self.y += dy
+    def length(self,other):
+        dx = self.x-other.x
+        dy = self.y-other.y
+        return sqrt(dx**2+dy**2)
+    def __str__(self):
+        return '(%s, %s)' % (str(self.x), str(self.y))
+
+def main():
+    #初始点
+    p1=point(2,2)
+    print(p1)
+    p2=point()
+    print(p2)
+    p2.move(5,6)
+    print(p2)
+    print(p2.length(p1))
+
+if __name__=='__main__':
+    main()
+'''
+'''
+#计算长方形的面积和周长，并比较周长和面积的差
+class rec(object):
+    def __init__(self,x=0,y=0):
+        self.zhouchang=2*(x+y)
+        self.mianji=x*y
+    def chazhi(self,other):
+        c=abs(self.zhouchang-other.zhouchang)
+        s=abs(self.mianji-other.mianji)
+        return c,s
+    def __str__(self):
+        return '(%s,%s)' %(str(self.zhouchang), str(self.mianji))
+def main():
+    r1=rec()
+    r2=rec(3,4)
+    print(r1)
+    print(r2)
+    print(r2.chazhi(r1))
+if __name__=='__main__':
+    main()
+'''
